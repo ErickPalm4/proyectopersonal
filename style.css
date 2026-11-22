@@ -1,0 +1,368 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #eef1f5;
+    color: #222222;
+    padding: 20px;
+}
+
+.app-contenedor {
+    max-width: 760px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #d5dbe2;
+    padding: 24px;
+}
+
+/* Encabezado */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    border-bottom: 2px solid #f0f2f5;
+    padding-bottom: 16px;
+    margin-bottom: 18px;
+}
+
+.saludo h1 {
+    font-size: 22px;
+    color: #1e3a5f;
+}
+
+.saludo p {
+    font-size: 13px;
+    color: #666666;
+}
+
+.ingreso-control {
+    background-color: #e8f5e9;
+    padding: 10px 14px;
+    border-radius: 6px;
+    border: 1px solid #c8e6c9;
+}
+
+.ingreso-control > label {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    color: #2e7d32;
+    margin-bottom: 4px;
+}
+
+.ingreso-control input[type="number"] {
+    width: 120px;
+    padding: 5px 8px;
+    font-size: 15px;
+    font-weight: bold;
+    border: 1px solid #81c784;
+    border-radius: 4px;
+}
+
+.tipo-ingreso {
+    margin-top: 6px;
+    font-size: 12px;
+    color: #1b5e20;
+}
+
+/* Barra de progreso */
+.progreso-contenedor {
+    margin-bottom: 20px;
+}
+
+.progreso-texto {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    margin-bottom: 6px;
+    color: #444444;
+}
+
+.barra-fondo {
+    width: 100%;
+    height: 12px;
+    background-color: #e0e4e8;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.barra-relleno {
+    height: 100%;
+    width: 0%;
+    background-color: #2e7d32;
+}
+
+/* Tarjetas resumen */
+.panel-resumen {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
+.tarjeta-dato {
+    flex: 1;
+    min-width: 160px;
+    background-color: #f8f9fa;
+    border: 1px solid #e1e4e8;
+    padding: 14px;
+    border-radius: 8px;
+}
+
+.tarjeta-dato .etiqueta {
+    display: block;
+    font-size: 12px;
+    color: #555555;
+    margin-bottom: 6px;
+}
+
+.tarjeta-dato .valor {
+    font-size: 20px;
+    color: #111111;
+}
+
+.tarjeta-dato select {
+    width: 100%;
+    padding: 6px;
+    font-size: 13px;
+    font-weight: bold;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    background-color: #ffffff;
+}
+
+/* Tabla y formularios */
+.barra-titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.barra-titulo h2 {
+    font-size: 18px;
+    color: #1e3a5f;
+}
+
+.formulario-caja {
+    background-color: #f4f7fa;
+    border: 1px solid #cfd8e3;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+}
+
+.formulario-caja h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #1e3a5f;
+}
+
+.fila-inputs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.fila-inputs input,
+.fila-inputs select {
+    flex: 1;
+    min-width: 120px;
+    padding: 8px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.botones-form {
+    display: flex;
+    gap: 8px;
+}
+
+.tabla-contenedor {
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+th,
+td {
+    padding: 10px 12px;
+    border: 1px solid #e0e0e0;
+    text-align: left;
+}
+
+th {
+    background-color: #f1f3f5;
+    color: #333333;
+}
+
+tfoot td {
+    background-color: #fafafa;
+}
+
+.badge {
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.prioridad-Alta {
+    background-color: #ffebee;
+    color: #c62828;
+}
+
+.prioridad-Media {
+    background-color: #fff8e1;
+    color: #ef6c00;
+}
+
+.prioridad-Baja {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+/* Botones */
+.btn {
+    padding: 9px 14px;
+    border: none;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-verde {
+    background-color: #2e7d32;
+    color: #ffffff;
+}
+
+.btn-azul {
+    background-color: #1976d2;
+    color: #ffffff;
+}
+
+.btn-azul-oscuro {
+    background-color: #1e3a5f;
+    color: #ffffff;
+}
+
+.btn-gris {
+    background-color: #e0e0e0;
+    color: #222222;
+}
+
+.btn-accion {
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    margin-right: 4px;
+}
+
+.btn-abonar {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #a5d6a7;
+}
+
+.btn-eliminar {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ffcdd2;
+}
+
+.acciones-inferiores {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.acciones-inferiores .btn {
+    flex: 1;
+    padding: 12px;
+    font-size: 14px;
+}
+
+/* Panel de salida */
+.panel-salida {
+    background-color: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #1e3a5f;
+    border-radius: 6px;
+    padding: 16px;
+    margin-bottom: 20px;
+}
+
+.salida-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 8px;
+}
+
+.salida-header h3 {
+    font-size: 16px;
+    color: #1e3a5f;
+}
+
+.btn-cerrar {
+    background: none;
+    border: 1px solid #cccccc;
+    padding: 3px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.salida-contenido p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+/* Navegación inferior */
+.nav-inferior {
+    display: flex;
+    border-top: 2px solid #f0f2f5;
+    padding-top: 14px;
+    gap: 8px;
+}
+
+.nav-item {
+    flex: 1;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #555555;
+    cursor: pointer;
+}
+
+.nav-item.activo {
+    background-color: #1e3a5f;
+    color: #ffffff;
+    border-color: #1e3a5f;
+}
+
+.oculto {
+    display: none;
+}

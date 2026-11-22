@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Deudas Familiares</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-contenedor">
+        <!-- Encabezado -->
+        <header class="app-header">
+            <div class="saludo">
+                <h1>¡Bienvenido, Erick!</h1>
+                <p>Control de deudas y gastos del hogar</p>
+            </div>
+            <div class="ingreso-control">
+                <label for="input-ingreso">Ingreso Mensual ($):</label>
+                <input type="number" id="input-ingreso" value="500" min="0" step="10">
+                <div class="tipo-ingreso">
+                    <label>
+                        <input type="checkbox" id="check-variable"> Ingreso variable
+                    </label>
+                </div>
+            </div>
+        </header>
+
+        <!-- Barra de progreso -->
+        <section class="progreso-contenedor">
+            <div class="progreso-texto">
+                <span>Progreso de pago</span>
+                <strong id="texto-progreso">0% liquidado</strong>
+            </div>
+            <div class="barra-fondo">
+                <div class="barra-relleno" id="barra-progreso"></div>
+            </div>
+        </section>
+
+        <!-- Resumen principal -->
+        <section class="panel-resumen">
+            <div class="tarjeta-dato">
+                <span class="etiqueta">Deuda Total</span>
+                <strong class="valor" id="resumen-deuda">$2,500.00</strong>
+            </div>
+            <div class="tarjeta-dato">
+                <span class="etiqueta">Tiempo Estimado</span>
+                <strong class="valor" id="resumen-meses">24 meses</strong>
+            </div>
+            <div class="tarjeta-dato">
+                <span class="etiqueta">Estrategia</span>
+                <select id="select-estrategia">
+                    <option value="Avalancha">Método Avalancha (Mayor interés)</option>
+                    <option value="Bola de Nieve">Bola de Nieve (Menor monto)</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Gestión de deudas -->
+        <section class="seccion-deudas">
+            <div class="barra-titulo">
+                <h2>Deudas Registradas</h2>
+                <button type="button" class="btn btn-verde" id="btn-abrir-form">+ Añadir Deuda</button>
+            </div>
+
+            <!-- Formulario para añadir deuda -->
+            <form id="form-nueva-deuda" class="formulario-caja oculto">
+                <h3>Nueva deuda</h3>
+                <div class="fila-inputs">
+                    <input type="text" id="deuda-nombre" placeholder="Nombre (ej. Tarjeta)" required>
+                    <input type="number" id="deuda-monto" placeholder="Monto ($)" min="1" step="0.01" required>
+                    <input type="number" id="deuda-interes" placeholder="Interés (%)" min="0" max="100" step="0.1" required>
+                    <select id="deuda-prioridad">
+                        <option value="Alta">Prioridad Alta</option>
+                        <option value="Media">Prioridad Media</option>
+                        <option value="Baja">Prioridad Baja</option>
+                    </select>
+                </div>
+                <div class="botones-form">
+                    <button type="submit" class="btn btn-azul">Guardar</button>
+                    <button type="button" class="btn btn-gris" id="btn-cancelar-form">Cancelar</button>
+                </div>
+            </form>
+
+            <!-- Tabla de deudas -->
+            <div class="tabla-contenedor">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Deuda</th>
+                            <th>Saldo Actual</th>
+                            <th>Interés</th>
+                            <th>Prioridad</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-deudas"></tbody>
+                    <tfoot>
+                        <tr>
+                            <td><strong>TOTAL</strong></td>
+                            <td colspan="4"><strong id="tabla-total">$2,500.00</strong></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+
+        <!-- Acciones principales -->
+        <section class="acciones-inferiores">
+            <button type="button" class="btn btn-azul-oscuro" id="btn-ia">Función Inteligente (IA)</button>
+            <button type="button" class="btn btn-gris" id="btn-informe">Generar Informe</button>
+        </section>
+
+        <!-- Panel dinámico para IA, Informes y Menú -->
+        <section id="panel-salida" class="panel-salida oculto">
+            <div class="salida-header">
+                <h3 id="salida-titulo">Resultado</h3>
+                <button type="button" class="btn-cerrar" id="btn-cerrar-salida">Cerrar</button>
+            </div>
+            <div id="salida-contenido" class="salida-contenido"></div>
+        </section>
+
+        <!-- Navegación inferior -->
+        <nav class="nav-inferior">
+            <button type="button" class="nav-item activo" id="nav-inicio">Inicio</button>
+            <button type="button" class="nav-item" id="nav-herramientas">Herramientas</button>
+            <button type="button" class="nav-item" id="nav-perfil">Perfil y Privacidad</button>
+        </nav>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
